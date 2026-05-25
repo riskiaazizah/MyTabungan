@@ -3,12 +3,30 @@
  */
 package mytabungan;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import javafx.application.Application;
+import javafx.stage.Stage;
+import mytabungan.scenes.LoginScene;
 
+public class App  extends Application{
+
+    @Override
+    public void start(Stage primaryStage) {
+
+        LoginScene loginScene = new LoginScene(primaryStage);
+        primaryStage.setScene(loginScene.getLogin(primaryStage));
+
+        primaryStage.setTitle("Tabungin");
+        primaryStage.show();
+    }
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        // try {
+        //     DatabaseConfig.connect();
+        //     System.out.println("Koneksi berhasil!");
+        // } catch (SQLException e) {
+        //     System.out.println("Koneksi gagal!");
+
+        //     e.printStackTrace();
+        // }
+        launch(args);
     }
 }
