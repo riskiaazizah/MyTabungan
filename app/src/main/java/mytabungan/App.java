@@ -3,14 +3,20 @@
  */
 package mytabungan;
 
+import java.sql.SQLException;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 import mytabungan.scenes.LoginScene;
+import mytabungan.*;
+import mytabungan.database.DBIniatializer;
+import mytabungan.database.DatabaseConfig;
 
 public class App  extends Application{
 
     @Override
     public void start(Stage primaryStage) {
+        // DBIniatializer.init();
 
         LoginScene loginScene = new LoginScene(primaryStage);
         primaryStage.setScene(loginScene.getLogin(primaryStage));
@@ -25,7 +31,7 @@ public class App  extends Application{
         // } catch (SQLException e) {
         //     System.out.println("Koneksi gagal!");
 
-        //     e.printStackTrace();
+        //     e.printStackTrace();.\gradlew run
         // }
         launch(args);
     }
